@@ -6,17 +6,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arjit222830/socket.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arjit222830/socket/issues"
+  },
+  "homepage": "https://github.com/Arjit222830/socket#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "config": "^3.3.1",
-    "cors": "^2.8.5",
+    "ejs": "^3.1.3",
     "express": "^4.17.1",
     "helmet": "^3.23.1",
+    "http": "0.0.1-security",
+    "moment": "^2.27.0",
     "mongoose": "^5.9.19",
-    "pug": "^3.0.0"
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0"
   }
 }

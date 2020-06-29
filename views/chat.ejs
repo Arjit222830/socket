@@ -1,0 +1,51 @@
+<!DOCTTYPE html>
+  <html>
+  <%- include('header.ejs') %>
+
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1><i class="fas fa-smile"></i> ChatCord</h1>
+        <a href="/" class="btn">Leave Room</a>
+      </header>
+
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+          <% for(var i=0;i<messages.length;i++) { %>
+          <% if(messages[i].user!=logg) { %>
+          <div class="message text-left">
+            <% } else { %>
+            <div class="message text-right">
+              <% } %>
+              <h6><%- messages[i].user%></h6>
+              <p class="meta"><%- messages[i].text%>
+                <span><%- JSON.stringify(messages[i].date).substring(1,20)%></span>
+              </p>
+            </div>
+            <% } %>
+          </div>
+      </main>
+
+      <div class="chat-form-container">
+        <form id="chat-form" action="/message">
+          <input id="text" type="text" name="text" placeholder="Enter Message" required autocomplete="off" />
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="socket.js"></script>
+    <script>
+      var identity = '<%- id %>';
+    </script>
+
+  </body>
+
+  </html>
